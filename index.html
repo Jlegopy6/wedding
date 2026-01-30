@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Свадьба Артёма и Софьи</title>
+  <style>
+    /* Общие стили */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #728A6E 20%, #D9E4D7 100%);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 100%;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    section {
+      width: 100%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: inherit;
+    }
+
+    /* Секция 1 — Приглашение */
+    #invite {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #728A6E 20%, #D9E4D7 100%);
+      padding: 0;
+    }
+
+    /* Секция 2 — История любви */
+    #story {
+      background: radial-gradient(circle at top, #8FA996 15%, #D9E4D7 100%);
+      padding: 80px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* Секция 3 — Место проведения */
+    #venue {
+      background: radial-gradient(circle at center, #5A735B 0%, #D9E4D7 100%);
+      padding: 80px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .venue-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+
+    .map-container {
+      width: 400px;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+      flex-shrink: 0;
+    }
+
+    .venue-info {
+      flex: 1;
+      min-width: 300px;
+      text-align: left;
+    }
+
+    .venue-info h3 {
+      font-family: 'Phenomena';
+      font-size: 36px;
+      color: white;
+      margin-bottom: 15px;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+    }
+
+    .venue-info p {
+      font-family: 'Phenomena', sans-serif;
+      font-size: 24px;
+      line-height: 1.6;
+      color: #fff;
+      margin-bottom: 10px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+
+    .date-time {
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+
+    .date-time p {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+
+    h1, h2 {
+      font-family: 'Phenomena';
+      margin-bottom: 10px;
+      font-size: 60px;
+      color: white;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+    
+
+    p {
+      font-family: 'Phenomena', sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #fff;
+      max-width: 700px;
+      margin: 0 auto 20px;
+      text-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+
+    .names {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 80px; /* или как вам нужно */
+      gap: 12px; /* расстояние между строками */
+    }
+
+    .name {
+      font-family: 'Better';
+      font-size: 192px; /* или 72px — подберите под дизайн */
+      color: #f5f5f5;
+      line-height: 1;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+    .ampersand {
+      font-family: 'Better', cursive;
+      font-size: 64px; /* меньше, чем у имён */
+      font-weight: normal;
+      color: #f5f5f5;
+      line-height: 1;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+
+    .story-content {   
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+      margin: 0 auto;
+    }
+
+    .story-text {
+      flex: 1;
+      min-width: 400px;
+      font-size: 32px !important;
+      line-height: 1.5;
+      padding: 0 20px;
+    }
+
+    .story-text p {
+      font-size: 32px !important;
+      line-height: 1.5;
+      margin: 0;
+      padding: 10px 0;
+    }
+
+    .story-photo {
+      width: 400px;
+      height: 400px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+
+
+
+    .contact-info {
+      margin-top: 15px;
+      font-size: 18px;
+      margin-bottom: 20px;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    @font-face {
+  font-family: 'Better';
+  src: url('fonts/Better Land RUS.woff2') format('woff2'),
+       url('fonts/Better Land RUS.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+    @font-face {
+  font-family: 'Phenomena';
+  src: url('fonts/Phenomena-Regular.woff2') format('woff2'),
+       url('fonts/Phenomena-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .name {
+        font-size: 140px;
+      }
+
+      h1, h2 {
+        font-size: 40px;
+      }
+
+    .story-content {   
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+      .story-text {
+        min-width: 300px;
+        font-size: 20px !important;
+        padding: 0 15px;
+      }
+
+      .story-text p {
+        font-size: 20px !important;
+        line-height: 1.6;
+        padding: 8px 0;
+      }
+
+      .story-photo {
+        width: 350px;
+        height: 350px;
+      }
+
+      .map-container {
+        width: 350px;
+        height: 350px;
+      }
+
+      /* Увеличиваем высоту секций для мобильных */
+      #story {
+        min-height: 140vh;
+        padding: 60px 15px;
+      }
+
+      #venue {
+        min-height: 130vh;
+        padding: 60px 15px;
+      }
+
+      #invite {
+        min-height: 100vh;
+        padding: 60px 15px;
+      }
+
+      .venue-content {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .map-container {
+        width: 350px;
+        height: 350px;
+      }
+
+      .venue-info {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .name {
+        font-size: 28px;
+      }
+
+      p, .contact-info {
+        font-size: 16px;
+      }
+
+      /* Дополнительное увеличение высоты для очень маленьких экранов */
+      #invite, #story, #venue {
+        min-height: 160vh;
+        padding: 40px 10px;
+      }
+
+      .name {
+        font-size: 80px;
+      }
+
+      h1, h2 {
+        font-size: 32px;
+      }
+
+      .story-text {
+        min-width: 250px;
+        font-size: 16px !important;
+        padding: 0 10px;
+      }
+
+      .story-text p {
+        font-size: 16px !important;
+        line-height: 1.6;
+        padding: 6px 0;
+      }
+
+      .story-photo {
+        width: 200px;
+        height: 200px;
+      }
+
+      .map-container {
+        width: 200px;
+        height: 200px;
+      }
+
+      .venue-info h3 {
+        font-size: 28px;
+      }
+
+      .date-time p {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Секция 1: Приглашение -->
+  <section id="invite">
+    <h1>Приглашаем на свадьбу</h1>
+    <div class="names">
+      <span class="name">Артёма</span>
+      <span class="ampersand">&</span>
+      <span class="name">Софьи</span>
+    </div>
+  </section>
+
+    <!-- Секция 2: История любви и место проведения -->
+    <section id="story">
+      <h2>Наша история любви</h2>
+      <div class="story-content">
+        <div class="story-text">
+          <p>
+            Наша история началась ещё в школе — с дружбы, первых разговоров и робких чувств.
+            С тех пор мы выросли, менялись, учились быть рядом и выбирали друг друга снова и снова.
+        </p>  
+        <p>
+            Мы прошли расстояние, время и разные этапы жизни, сохранив главное — любовь и желание идти дальше вместе.
+            К дню нашей свадьбы мы будем рядом уже 8 лет, и этот день станет новой главой нашей общей истории.
+        </p>
+
+        <p>
+            Будем счастливы разделить его с вами 🤍
+        </p>
+        </div>
+        <img src="images/image.png" alt="Фото пары" class="story-photo">
+      </div>
+    </section>
+
+    <!-- Секция 3: Место проведения -->
+    <section id="venue">
+      <h2>Место проведения</h2>
+      <div class="venue-content">
+        <div class="map-container">
+          <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac4519576adc776a28ce87addd53d83f89e6d893a22547b97366071763ef27fc3&amp;width=400&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+        </div>
+        <div class="venue-info">
+          <h3>Свадьба начнётся в ЗАГСе г. Сызрань, а после будет проходить в банкет-холле "У Кремля"</h3>
+          <p>📍 Адрес: г. Сызрань, ул. Советская 66 - ул. Советская 1А</p>
+            <p>📅 Дата: 8 июля 2026 года</p>
+            <p>⏰ Время: 14:55</p>
+          </div>
+      </div>
+      <div class="contact-info">
+        📞 +7 (987) 966-26-04<br>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
