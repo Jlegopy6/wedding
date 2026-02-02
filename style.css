@@ -1,0 +1,360 @@
+/* Подключение кастомных шрифтов */
+@font-face {
+  font-family: 'Better';
+  src: url('./fonts/BetterLand RUS.woff2') format('woff2'),
+       url('./fonts/BetterLand RUS.woff') format('woff'),
+       url('./fonts/BetterLand RUS.ttf') format('truetype'),
+       url('./fonts/BetterLand RUS.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Phenomena';
+  src: url('./fonts/Phenomena-Regular.woff2') format('woff2'),
+       url('./fonts/Phenomena-Regular.woff') format('woff'),
+       url('./fonts/Phenomena-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Общие стили */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at center, #728A6E 20%, #D9E4D7 100%);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+section {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: inherit;
+}
+
+/* Секция 1 — Приглашение */
+#invite {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #728A6E 20%, #D9E4D7 100%);
+  padding: 0;
+}
+
+/* Секция 2 — История любви */
+#story {
+  background: radial-gradient(circle at top, #8FA996 15%, #D9E4D7 100%);
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* Секция 3 — Место проведения */
+#venue {
+  background: radial-gradient(circle at center, #5A735B 0%, #D9E4D7 100%);
+  padding: 80px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.venue-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.map-container {
+  width: 400px;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  flex-shrink: 0;
+}
+
+.venue-info {
+  flex: 1;
+  min-width: 300px;
+  text-align: left;
+}
+
+.venue-info h3 {
+  font-family: 'Phenomena';
+  font-size: 36px;
+  color: white;
+  margin-bottom: 15px;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+}
+
+.venue-info p {
+  font-family: 'Phenomena', sans-serif;
+  font-size: 24px;
+  line-height: 1.6;
+  color: #fff;
+  margin-bottom: 10px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.date-time {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.date-time p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+h1, h2 {
+  font-family: 'Phenomena';
+  margin-bottom: 10px;
+  font-size: 60px;
+  color: white;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.2);
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+p {
+  font-family: 'Phenomena', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #fff;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  text-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.names {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  gap: 12px;
+}
+
+.name {
+  font-family: 'Better';
+  font-size: 192px;
+  color: #f5f5f5;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.ampersand {
+  font-family: 'Better', cursive;
+  font-size: 64px;
+  font-weight: normal;
+  color: #f5f5f5;
+  line-height: 1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.story-content {   
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  margin: 0 auto;
+}
+
+.story-text {
+  flex: 1;
+  min-width: 400px;
+  font-size: 32px !important;
+  line-height: 1.5;
+  padding: 0 20px;
+}
+
+.story-text p {
+  font-size: 32px !important;
+  line-height: 1.5;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.story-photo {
+  width: 400px;
+  height: 400px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.contact-info {
+  margin-top: 15px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .name {
+    font-size: 140px;
+  }
+
+  h1, h2 {
+    font-size: 40px;
+  }
+
+  .story-content {   
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .story-text {
+    min-width: 300px;
+    font-size: 20px !important;
+    padding: 0 15px;
+  }
+
+  .story-text p {
+    font-size: 20px !important;
+    line-height: 1.6;
+    padding: 8px 0;
+  }
+
+  .story-photo {
+    width: 350px;
+    height: 350px;
+  }
+
+  .map-container {
+    width: 350px;
+    height: 350px;
+  }
+
+  /* Увеличиваем высоту секций для мобильных */
+  #story {
+    min-height: 140vh;
+    padding: 60px 15px;
+  }
+
+  #venue {
+    min-height: 130vh;
+    padding: 60px 15px;
+  }
+
+  #invite {
+    min-height: 100vh;
+    padding: 60px 15px;
+  }
+
+  .venue-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map-container {
+    width: 350px;
+    height: 350px;
+  }
+
+  .venue-info {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 28px;
+  }
+
+  p, .contact-info {
+    font-size: 16px;
+  }
+
+  /* Дополнительное увеличение высоты для очень маленьких экранов */
+  #invite, #story, #venue {
+    min-height: 160vh;
+    padding: 40px 10px;
+  }
+
+  .name {
+    font-size: 80px;
+  }
+
+  h1, h2 {
+    font-size: 32px;
+  }
+
+  .story-text {
+    min-width: 250px;
+    font-size: 16px !important;
+    padding: 0 10px;
+  }
+
+  .story-text p {
+    font-size: 16px !important;
+    line-height: 1.6;
+    padding: 6px 0;
+  }
+
+  .story-photo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .map-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .venue-info h3 {
+    font-size: 28px;
+  }
+
+  .date-time p {
+    font-size: 18px;
+  }
+}
