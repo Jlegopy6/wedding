@@ -25,7 +25,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -276,17 +275,17 @@ p {
 
   /* Увеличиваем высоту секций для мобильных */
   #story {
-    min-height: 140vh;
+    min-height: 100vh;
     padding: 60px 15px;
   }
 
   #venue {
-    min-height: 130vh;
+    min-height: 120vh;
     padding: 60px 15px;
   }
 
   #invite {
-    min-height: 100vh;
+    min-height: 120vh;
     padding: 60px 15px;
   }
 
@@ -315,11 +314,18 @@ p {
   }
 
   /* Дополнительное увеличение высоты для очень маленьких экранов */
-  #invite, #story, #venue {
-    min-height: 160vh;
+  #invite {
+    min-height: 100vh;
     padding: 40px 10px;
   }
-
+  #story{
+    min-height: 120vh;
+    padding: 40px 10px;
+  }
+    #venue {
+    min-height: 120vh;
+    padding: 40px 10px;
+  }
   .name {
     font-size: 80px;
   }
