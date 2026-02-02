@@ -221,8 +221,9 @@
 
     @font-face {
   font-family: 'Better';
-  src: url('./fonts/Better Land RUS.woff2') format('woff2'),
-       url('./fonts/Better Land RUS.woff') format('woff');
+  src: url('./fonts/BetterLand RUS.woff2') format('woff2'),
+       url('./fonts/BetterLand RUS.woff') format('woff'),
+       url('./fonts/BetterLand RUS.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -231,7 +232,8 @@
     @font-face {
   font-family: 'Phenomena';
   src: url('./fonts/Phenomena-Regular.woff2') format('woff2'),
-       url('./fonts/Phenomena-Regular.woff') format('woff');
+       url('./fonts/Phenomena-Regular.woff') format('woff'),
+       url('./Phenomena-Regular.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -321,8 +323,19 @@
         font-size: 16px;
       }
 
-      #invite, #story, #venue {
-        min-height: 120vh;
+      /* Дополнительное увеличение высоты для очень маленьких экранов */
+      #invite {
+        min-height: 100vh;
+        padding: 40px 10px;
+      }
+
+      #story {
+        min-height: 150vh;
+        padding: 40px 10px;
+      }
+
+      #venue {
+        min-height: 150vh;
         padding: 40px 10px;
       }
 
@@ -347,13 +360,13 @@
       }
 
       .story-photo {
-        width: 220px;
-        height: 220px;
+        width: 250px;
+        height: 250px;
       }
 
       .map-container {
-        width: 220px;
-        height: 220px;
+        width: 250px;
+        height: 250px;
       }
 
       .venue-info h3 {
@@ -398,7 +411,7 @@
             Будем счастливы разделить его с вами 🤍
         </p>
         </div>
-        <img src="./images/image.jpg" alt="Фото" class="story-photo">
+        <img src="./images/image.jpg" alt="Photo" class="story-photo">
       </div>
     </section>
 
